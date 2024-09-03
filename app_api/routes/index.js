@@ -10,5 +10,9 @@ router
   .post(tripsController.tripsAddTrip);
 
 //GET Method routes tripsFindByCode
-router.route("/trips/:tripCode").get(tripsController.tripsFindByCode);
+//PUT Method routes tripsUpdateTrip
+router
+  .route("/trips/:tripCode")
+  .get(tripsController.tripsFindByCode)
+  .put(tripsController.tripsUpdateTrip);
 module.exports = router;
