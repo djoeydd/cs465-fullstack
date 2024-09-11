@@ -1,6 +1,6 @@
 <div id="header">
   <div id="logo">
-    <a href="index.html"><img
+    <a href="/index"><img
         src="images/logo.png"
         alt="LOGO"
         height="100"
@@ -9,26 +9,26 @@
   </div>
   <div id="navigation">
     <ul>
-      <li>
-        <a href="index.html">Home</a>
+      <li class="{{isSelected currentPage 'index'}}">
+        <a href="/index">Home</a>
       </li>
-      <li class="selected">
+      <li class="{{isSelected currentPage 'travel'}}">
         <a href="/travel">Travel</a>
       </li>
-      <li>
-        <a href="rooms.html">Rooms</a>
+      <li class="{{isSelected currentPage 'rooms'}}">
+        <a href="/rooms">Rooms</a>
       </li>
-      <li>
-        <a href="meals.html">Meals</a>
+      <li class="{{isSelected currentPage 'meals'}}">
+        <a href="/meals">Meals</a>
       </li>
-      <li>
-        <a href="news.html">News</a>
+      <li class="{{isSelected currentPage 'news'}}">
+        <a href="/news">News</a>
       </li>
-      <li>
-        <a href="about.html">About</a>
+      <li class="{{isSelected currentPage 'about'}}">
+        <a href="/about">About</a>
       </li>
-      <li>
-        <a href="contact.html">Contact</a>
+      <li class="{{isSelected currentPage 'contact'}}">
+        <a href="/contact">Contact</a>
       </li>
     </ul>
   </div>

@@ -15,11 +15,16 @@ const travel = async (req, res, next) => {
           message = "No trips exist in our database";
         }
       }
-      res.render("travel", { title: "Travlr Getaways", trips: json, message });
+      const currentPage = "travel"; // Define currentPage variable
+      res.render("travel", {
+        title: "Travlr Getaways",
+        trips: json,
+        message,
+        currentPage,
+      });
     })
     .catch((err) => res.status(500).send(e.message));
 };
-
 const tripsEndpoint = "http://localhost:3000/api/trips";
 const options = {
   method: "GET",

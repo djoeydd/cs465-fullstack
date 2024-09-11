@@ -5,7 +5,7 @@ const router = express.Router();
 //import controllers to route
 const tripsController = require("../controllers/trips");
 const authController = require("../controllers/authentication");
-
+const roomsController = require("../controllers/rooms");
 // define the registration routes endpoint
 router.route("/register").post(authController.register);
 
@@ -17,6 +17,9 @@ router
   .route("/trips")
   .get(tripsController.tripsList)
   .post(authenticateJWT, tripsController.tripsAddTrip);
+
+// define the room routes endpoint
+router.route("/rooms").get(roomsController.roomsList);
 
 //GET Method routes tripsFindByCode
 //PUT Method routes tripsUpdateTrip

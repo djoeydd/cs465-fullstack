@@ -1,10 +1,10 @@
 var express = require("express");
 var router = express.Router();
-const ctrlMain = require("../controllers");
+var controller = require("../controllers/meals");
 
-/* GET home page. */
+/* GET travel page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Index", currentPage: "index" });
+  res.render("meals", { title: "Meals", currentPage: "meals" });
 });
 
 module.exports = router;

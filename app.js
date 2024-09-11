@@ -7,6 +7,12 @@ var logger = require("morgan");
 var indexRouter = require("./app_server/routes/index");
 var usersRouter = require("./app_server/routes/users");
 var travelRouter = require("./app_server/routes/travel");
+var aboutRouter = require("./app_server/routes/about");
+var newsRouter = require("./app_server/routes/news");
+var mealsRouter = require("./app_server/routes/meals");
+var roomsRouter = require("./app_server/routes/rooms");
+var contactRouter = require("./app_server/routes/contact");
+
 var apiRouter = require("./app_api/routes/index");
 
 var handlebars = require("hbs");
@@ -23,6 +29,16 @@ app.set("view engine", "hbs");
 
 // Register partials
 handlebars.registerPartials(__dirname + "/app_server/views/partials");
+
+// Register custom helper
+handlebars.registerHelper("isSelected", function (currentPage, linkPage) {
+  return currentPage === linkPage ? "selected" : "";
+});
+
+// Register custom helper
+handlebars.registerHelper("isActive", function (currentPage, linkPage) {
+  return currentPage === linkPage ? "active" : "";
+});
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -42,9 +58,14 @@ app.use("/api", (req, res, next) => {
   next();
 });
 
-app.use("/", indexRouter);
+app.use("/index", indexRouter);
 app.use("/users", usersRouter);
 app.use("/travel", travelRouter);
+app.use("/about", aboutRouter);
+app.use("/news", newsRouter);
+app.use("/meals", mealsRouter);
+app.use("/rooms", roomsRouter);
+app.use("/contact", contactRouter);
 app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler
