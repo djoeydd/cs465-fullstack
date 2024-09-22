@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Trip = require("../models/travlr");
+const { Trip } = require("../models/travlr");
 const Model = mongoose.model("trips");
 
 const tripsList = async (req, res) => {
@@ -43,7 +43,6 @@ const tripsAddTrip = async (req, res) => {
   }
 };
 
-// PUT: /trips/:tripCode - Adds a new Trip
 // Regardless of outcome, response must include HTML status code;
 // and JSON message to the requesting client
 const tripsUpdateTrip = async (req, res) => {
